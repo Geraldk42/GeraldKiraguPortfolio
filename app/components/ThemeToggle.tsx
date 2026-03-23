@@ -25,6 +25,7 @@ export default function ThemeToggle() {
         document.documentElement.classList.add("dark");
       } else {
         setTheme("light");
+        document.documentElement.classList.remove("dark");
       }
     }
   }, []);
@@ -33,7 +34,11 @@ export default function ThemeToggle() {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark");
+    if (newTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   };
 
   if (!mounted) {

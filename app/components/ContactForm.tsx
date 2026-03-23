@@ -41,7 +41,7 @@ export default function ContactForm() {
   return (
     <div className="w-full max-w-3xl mx-auto bg-white dark:bg-[#121821] p-8 rounded-xl border border-gray-200 dark:border-gray-800 transition-colors">
       {submitted && (
-        <p className="text-green-400 mb-4">Thank you! Your message has been sent.</p>
+        <p className="text-green-600 dark:text-green-400 mb-4">Thank you! Your message has been sent.</p>
       )}
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">

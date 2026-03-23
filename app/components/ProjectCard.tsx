@@ -48,7 +48,7 @@ export default function ProjectCard({
           <a
             href={live}
             target="_blank"
-            className="text-[#ADF0D1] hover:underline"
+            className="text-[#2DAD9D] dark:text-[#ADF0D1] hover:underline"
           >
             Live Demo
           </a>
