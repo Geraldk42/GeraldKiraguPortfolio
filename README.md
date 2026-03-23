@@ -21,7 +21,7 @@ A modern, responsive personal portfolio website built with **Next.js 13**, **Typ
 - **Styling:** Tailwind CSS
 - **Form Handling:** EmailJS (serverless API route)
 - **Icons:** Lucide React
-- **Hosting:** Vercel (recommended)
+- **Hosting:** Vercel
 
 ---
 
@@ -43,7 +43,13 @@ page.tsx # Home / Hero Page
 /public
 resume.pdf # Downloadable resume
 
-📞 Contact
+## 📄 Usage
+Use the Resume Button in the Hero section to download your resume.
+Switch between dark/light mode using the toggle in the Navbar.
+Navigate to the Projects Page to view all your projects.
+Send a message via the Contact Form — submissions are sent securely via EmailJS.
+
+## 📞 Contact
 Email: gerrykiragu@outlook.com
 GitHub: github.com/geraldk42
 LinkedIn: linkedin.com/in/gerald-kiragu-ba6786250/
