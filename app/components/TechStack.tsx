@@ -10,6 +10,8 @@ const techs = [
   "SQL",
   "PHP",
   "Firebase",
+  "Docker",
+  "Supabase",
   "Tailwind",
   "Bootstrap",
   "React",

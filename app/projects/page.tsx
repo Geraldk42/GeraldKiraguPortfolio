@@ -28,7 +28,7 @@ const projects = [
   {
     title: "Veridian Tenant Management System",
     description:
-      "Veridian TMS is a comprehensive property management solution designed specifically for the Kenyan market. It streamlines the relationship between landlords and tenants through digital lease agreements, automated M-Pesa rent collection, and real-time financial reporting.",
+      "Veridian TMS is a comprehensive property management solution designed specifically for the Kenyan market.",
     tech:["PHP"],
     github: "https://github.com/Geraldk42/TMS-Veridian",
     live : "https://veridian-tms.gt.tc/"
@@ -40,6 +40,15 @@ const projects = [
     tech: ["Node.js Express", "MongoDB Atlas", "Postman"],
     github: "https://github.com/Geraldk42/servicehub-API"  
   },
+  {
+    title: "Pologger",
+    description:
+      "A scalable digital police OB system for complaint logging, officer assignment, and case tracking, built with Next.js, Supabase, and Vercel.",
+    tech: ["Next.js", "Supabase", "Vercel"],
+    github: "https://github.com/Geraldk42/Pologger",  
+    live : "https://pologger.vercel.app/"
+  },
+ 
   // I'm gonna add more projects here
 ];
 
