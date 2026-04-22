@@ -15,7 +15,9 @@ const techs = [
   "Tailwind",
   "Bootstrap",
   "React",
-  "Next.js"
+  "Next.js",
+  "Java"
+
 ];
 
 export default function TechStack() {
