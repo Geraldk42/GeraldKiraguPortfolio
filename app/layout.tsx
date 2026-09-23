@@ -28,7 +28,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${inter.className} min-h-screen bg-white dark:bg-[#0B0F14] text-gray-900 dark:text-white transition-colors duration-300`}>
+      <body className={`${inter.className} min-h-screen bg-[#F5F5F7] dark:bg-[#0D1117] text-[#1D1D1F] dark:text-[#F5F5F7] selection:bg-[#2DAD9D]/20 selection:text-[#2DAD9D] transition-colors duration-200 antialiased`}>
         <Navbar />
         {children}
       </body>

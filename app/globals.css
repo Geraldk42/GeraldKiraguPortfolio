@@ -2,7 +2,90 @@
 
 @variant dark (&:where(.dark, .dark *));
 
-/* Custom styles */
+:root {
+  --canvas-bg: #F5F5F7;
+  --surface-card: #FFFFFF;
+  --surface-card-elevated: #FFFFFF;
+  --border-hairline: rgba(0, 0, 0, 0.08);
+  --border-hairline-subtle: rgba(0, 0, 0, 0.04);
+  --primary-brand: #2DAD9D;
+  --primary-deep: #238B7E;
+  --primary-light-tint: #C8F2EC;
+  --primary-blush-card: rgba(45, 173, 157, 0.08);
+  --ink-primary: #1D1D1F;
+  --ink-secondary: #6E6E73;
+  --ink-muted: #8E8E93;
+  --float-pill-dark: #1D1D1F;
+  --state-success: #10B981;
+  --state-warning: #F59E0B;
+  --state-error: #E11D48;
+  --state-error-surface: #FFF1F2;
+}
+
+.dark {
+  --canvas-bg: #0D1117;
+  --surface-card: #161B22;
+  --surface-card-elevated: #1F242C;
+  --border-hairline: rgba(255, 255, 255, 0.10);
+  --border-hairline-subtle: rgba(255, 255, 255, 0.05);
+  --primary-brand: #2DAD9D;
+  --primary-deep: #238B7E;
+  --primary-light-tint: #1B4D45;
+  --primary-blush-card: rgba(45, 173, 157, 0.12);
+  --ink-primary: #F5F5F7;
+  --ink-secondary: #98989D;
+  --ink-muted: #636366;
+  --float-pill-dark: #21262D;
+  --state-success: #10B981;
+  --state-warning: #F59E0B;
+  --state-error: #F43F5E;
+  --state-error-surface: rgba(225, 29, 72, 0.15);
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--canvas-bg);
+  color: var(--ink-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular figures discipline */
+.tabular-nums,
+[data-tabular-nums] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* GK42 Button tactile press compression */
+.gk-btn-tap {
+  transition: transform 80ms cubic-bezier(0.25, 1, 0.5, 1), background-color 120ms ease-out, border-color 120ms ease-out, opacity 100ms ease-out, box-shadow 120ms ease-out;
+}
+
+.gk-btn-tap:active {
+  transform: scale(0.97);
+  opacity: 0.92;
+}
+
+/* GK42 ambient card shadow */
+.gk-card-shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.dark .gk-card-shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35), 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* GK42 floating pill shadow */
+.gk-pill-shadow {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Hero accent glow */
+.gk-hero-glow {
+  box-shadow: 0 8px 24px rgba(45, 173, 157, 0.20);
 }

@@ -1,57 +1,59 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { Sun, Moon } from "lucide-react";
 
-export default function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
-  const [theme, setTheme] = useState("light");
+function subscribeTheme(callback: () => void) {
+  const observer = new MutationObserver(callback);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  return () => observer.disconnect();
+}
 
-  useEffect(() => {
-    setMounted(true);
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    
-    if (savedTheme) {
-      setTheme(savedTheme);
-      if (savedTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    } else {
-      if (prefersDark) {
-        setTheme("dark");
-        document.documentElement.classList.add("dark");
-      } else {
-        setTheme("light");
-        document.documentElement.classList.remove("dark");
-      }
-    }
-  }, []);
+function getThemeSnapshot(): "light" | "dark" {
+  return document.documentElement.classList.contains("dark") ? "dark" : "light";
+}
+
+function getServerSnapshot(): "light" {
+  return "light";
+}
+
+const emptySubscribe = () => () => {};
+
+export default function ThemeToggle() {
+  const isClient = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
+
+  const theme = useSyncExternalStore(
+    subscribeTheme,
+    getThemeSnapshot,
+    getServerSnapshot
+  );
 
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    if (newTheme === "dark") {
+    const isDark = document.documentElement.classList.contains("dark");
+    const nextTheme = isDark ? "light" : "dark";
+    if (nextTheme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
+    localStorage.setItem("theme", nextTheme);
   };
 
-  if (!mounted) {
-    return <div className="w-9 h-9" />; // Placeholder to avoid layout shifts before hydrating
+  if (!isClient) {
+    return <div className="w-9 h-9 rounded-xl border border-black/[0.08] dark:border-white/[0.10] bg-white dark:bg-[#161B22]" />;
   }
 
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-lg bg-gray-200 dark:bg-[#121821] text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-800 transition border border-transparent dark:border-gray-800 flex items-center justify-center"
+      className="w-9 h-9 rounded-xl bg-white dark:bg-[#161B22] text-[#1D1D1F] dark:text-[#F5F5F7] border border-black/[0.08] dark:border-white/[0.10] hover:border-[#2DAD9D]/50 dark:hover:border-[#2DAD9D]/50 flex items-center justify-center gk-btn-tap gk-card-shadow cursor-pointer"
       aria-label="Toggle Theme"
     >
-      {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+      {theme === "dark" ? <Sun size={18} className="text-[#2DAD9D]" /> : <Moon size={18} className="text-[#1D1D1F]" />}
     </button>
   );
 }
