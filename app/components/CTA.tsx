@@ -8,10 +8,7 @@ export default function CTA() {
     <section className="py-12 sm:py-20 px-4 sm:px-6 text-center">
       <div className="max-w-4xl mx-auto bg-white dark:bg-[#161B22] border border-black/[0.08] dark:border-white/[0.10] rounded-2xl p-6 sm:p-12 gk-card-shadow">
         
-        {/* Section Header Caption */}
-        <p className="text-xs font-semibold uppercase tracking-wider text-[#2DAD9D] mb-2">
-          Collaboration & Opportunities
-        </p>
+      
 
         {/* Title */}
         <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#1D1D1F] dark:text-[#F5F5F7] mb-3">

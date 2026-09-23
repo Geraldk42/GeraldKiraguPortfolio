@@ -1,6 +1,7 @@
 "use client";
 
-import { Github, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { Github } from "./Icons";
 
 type Project = {
   title: string;

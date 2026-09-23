@@ -1,6 +1,7 @@
 "use client";
 
-import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
+import { Github, Linkedin } from "./Icons";
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
         <p className="flex items-center gap-1.5 text-center sm:text-left">
           <span>©</span>
           <span className="tabular-nums font-medium">{new Date().getFullYear()}</span>
-          <span>Gerald Kiragu. Built with GK42 Design System.</span>
+          <span>Gerald Kiragu.</span>
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs">

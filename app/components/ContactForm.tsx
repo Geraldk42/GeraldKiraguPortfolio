@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { Github, Linkedin, Mail, MessageCircle, CheckCircle2, AlertCircle, RefreshCw, Loader2 } from "lucide-react";
+import { Mail, MessageCircle, CheckCircle2, AlertCircle, RefreshCw, Loader2 } from "lucide-react";
+import { Github, Linkedin } from "./Icons";
 import emailjs from "@emailjs/browser";
 
 interface FormErrors {
@@ -102,11 +103,8 @@ export default function ContactForm() {
     <div className="w-full max-w-2xl mx-auto bg-white dark:bg-[#161B22] p-6 sm:p-10 rounded-2xl border border-black/[0.08] dark:border-white/[0.10] gk-card-shadow">
       
       <div className="mb-6 sm:mb-8 text-center sm:text-left">
-        <p className="text-xs font-semibold uppercase tracking-wider text-[#2DAD9D] mb-1.5">
-          Direct Inquiries
-        </p>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1D1D1F] dark:text-[#F5F5F7] mb-2">
-          Contact Gerald
+          Contact me
         </h2>
         <p className="text-xs sm:text-sm text-[#6E6E73] dark:text-[#98989D] leading-relaxed">
           Send a direct message regarding software engineering roles, project architecture, or collaborations.

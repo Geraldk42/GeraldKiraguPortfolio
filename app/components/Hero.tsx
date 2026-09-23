@@ -24,7 +24,7 @@ export default function Hero() {
 
           {/* Body */}
           <p className="text-sm sm:text-base text-[#6E6E73] dark:text-[#98989D] leading-relaxed max-w-xl mb-6 sm:mb-8">
-            I'm a software developer specializing in building scalable APIs, systems, and user-friendly web applications using modern technologies.
+            I&apos;m a software developer specializing in building scalable APIs, systems, and user-friendly web applications using modern technologies.
           </p>
 
           {/* GK42 Button Architecture: 2-Row Thumb Layout on Mobile, Horizontal on Desktop */}
